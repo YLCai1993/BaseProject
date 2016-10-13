@@ -77,7 +77,6 @@ static const CGFloat kVideoControlBarAutoFadeOutTimeinterval = 5.0;
 }
 
 -(void)autoFadeOutControlBar{
-    NSLog(@"调用");
     if (!self.isBarShowing) {
         return;
     }

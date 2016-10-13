@@ -35,7 +35,7 @@
 @property (nonatomic, strong) NSArray *timeline;
 @property (nonatomic, strong) NSString *subjectId;
 @property (nonatomic, strong) NSArray *talkContent;
-@property (nonatomic, strong) NSArray *relatedNews;
+@property (nonatomic, strong) NSArray *related;
 @property (nonatomic, assign) double type;
 @property (nonatomic, assign) double talkCount;
 @property (nonatomic, strong) NSString *feature;
@@ -43,6 +43,17 @@
 @property (nonatomic, strong) NSString *alias;
 @property (nonatomic, assign) double timelineCount;
 @property (nonatomic, strong) NSString *name;
+
+@end
+
+@interface DetailTopicDataSubjectRelatedNewsModel : BaseModel
+
+@property (nonatomic, strong) NSString *topicid;
+@property (nonatomic, strong) NSString *docid;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *skipType;
+@property (nonatomic, strong) NSString *ptime;
+@property (nonatomic, strong) NSString *skipId;
 
 @end
 

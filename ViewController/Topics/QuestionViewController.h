@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class QuestionViewController;
+
+@protocol questionViewControllerDelegate <NSObject>
+
+-(void)questionViewController:(QuestionViewController *)questionViewController didSendExpertID:(NSString *)ID;
+
+@end
+
 @interface QuestionViewController : UIViewController
+
+@property(nonatomic,weak)id<questionViewControllerDelegate> delegate;
 
 @end

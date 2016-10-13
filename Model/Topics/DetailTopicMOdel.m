@@ -25,6 +25,23 @@
 
 @implementation DetailTopicDataSubjectModel
 
++(NSDictionary *)replacedKeyFromPropertyName{
+    return @{
+             @"related":@"relatedNews"
+             };
+}
+
++(NSDictionary *)objectClassInArray{
+    return @{
+             @"related":[DetailTopicDataSubjectRelatedNewsModel class]
+             };
+}
+
+@end
+
+@implementation DetailTopicDataSubjectRelatedNewsModel
+
+
 @end
 
 @implementation DetailTopicDataHotListModel

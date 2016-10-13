@@ -7,8 +7,9 @@
 //
 
 #import "YLTabBarController.h"
+#import "YQSlideMenuController.h"
 
-@interface YLTabBarController ()
+@interface YLTabBarController ()<YQContentViewControllerDelegate>
 
 @end
 
@@ -57,8 +58,11 @@
     //渲染图片
     UIImage *selectedImage = [self.tabBarItem.selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     self.tabBarItem.selectedImage = selectedImage;
-
-    
 }
+
+- (UINavigationController *)yq_navigationController {
+    return self.selectedViewController;
+}
+
 
 @end

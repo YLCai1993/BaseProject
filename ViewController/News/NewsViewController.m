@@ -46,28 +46,10 @@
     return _leftViewController;
 }
 
--(RESideMenu *)sideMenu{
-    if (!_sideMenu) {
-        _sideMenu=[[RESideMenu alloc]initWithContentViewController:self leftMenuViewController:self.leftViewController rightMenuViewController:nil];
-        //为sideMenu设置背景图,图片插件KSImageName，到Github下载
-        _sideMenu.backgroundImage =[UIImage imageNamed:@"beautiful"];
-        //可以让出现菜单时不显示状态栏
-        _sideMenu.menuPrefersStatusBarHidden = YES;
-        //不允许菜单栏到了边缘还可以继续缩小
-        _sideMenu.bouncesHorizontally = NO;
-    }
-    return _sideMenu;
-    
-}
-
 /*  显示侧边栏  */
 - (IBAction)changeToOnLineRadio:(UIBarButtonItem *)sender {
-    NSLog(@"点击了左上按钮");
-//    [self.sideMenuViewController presentLeftMenuViewController];
     [[self slideMenuController] showMenu];//打开菜单
-//    self.tabBarController.selectedIndex = 1;
 }
-
 
 -(NSMutableArray *)classModels{
     if (!_classModels) {
@@ -76,7 +58,6 @@
     }
     return  _classModels;
 }
-
 
 -(void)scrollDisplayViewController:(ScrollDisplayViewController *)scrollDisplayViewController currentIdenx:(NSInteger)index{
     classIndex = index - 1;

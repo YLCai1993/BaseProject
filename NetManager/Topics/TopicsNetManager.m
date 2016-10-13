@@ -27,5 +27,14 @@
     
 }
 
+//http://c.m.163.com/newstopic/qa/EX01683146813708615596.html
++(id)getDetailTopicsBeginAtIndex:(NSNumber *)index andID:(NSString *)ID completeHandle:(void(^)(DetailQuestionModel *model,NSError *error))completeHandle{
+    NSString *path = [NSString stringWithFormat:@"http://c.m.163.com/newstopic/qa/%@.html",ID];
+    return [self Get:path parameters:nil completionHandler:^(id responseObj, NSError *error) {
+        completeHandle([DetailQuestionModel objectWithKeyValues:responseObj],error);
+    }];
+
+}
+
 
 @end

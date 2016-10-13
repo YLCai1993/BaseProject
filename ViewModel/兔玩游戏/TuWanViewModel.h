@@ -73,4 +73,8 @@
 -(BOOL )isHtmlInListForRow:(NSInteger )row;
 -(BOOL )isHtmlInIndexPicForRow:(NSInteger )row;
 
+/** 返回某行数据的Aid  */
+-(NSString *)aidInListForRow:(NSInteger )row;
+-(NSString *)aidInIndexPicForRow:(NSInteger )row;
+
 @end

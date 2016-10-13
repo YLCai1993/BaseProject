@@ -123,6 +123,8 @@
     _sdVC.autoCycle = YES;
     _sdVC.canCycle = YES;
     _sdVC.delegate = self;
+    /* 容错处理  */
+    if ([self.lrVM getDetail] == nil || [self.lrVM getDetail].count == 0) return;
     _sdVC.detailMessage = [self.lrVM getDetail];
     [self addChildViewController:_sdVC];
     [headView addSubview:_sdVC.view];

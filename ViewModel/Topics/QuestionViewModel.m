@@ -76,6 +76,11 @@
     return cquestion;
 }
 
+-(NSString *)getexperIDForRow:(NSInteger )row{
+    QuestionDataExpertListModel *model = self.dataArr[row];
+    return model.expertId;
+}
+
 -(void)getDataCompleteHandle:(void(^)(NSError *error))complete{
     
     [TopicsNetManager getTopicsFromBeginIndex:_index andPage:_pageNumber completeHandle:^(QuestionModel *model, NSError *error) {

@@ -2,7 +2,7 @@
 //  TuWanPicModel.h
 //  BaseProject
 //
-//  Created by jiyingxin on 15/11/8.
+//  Created by YLCai on 15/11/8.
 //  Copyright © 2015年 Tarena. All rights reserved.
 //
 

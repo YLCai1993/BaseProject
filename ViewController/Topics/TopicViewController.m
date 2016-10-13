@@ -12,8 +12,10 @@
 #import "TopicsViewController.h"
 #import "AttentionViewController.h"
 #import "ResultViewController.h"
+#import "DetailTopicsViewController.h"
+#import "DetailQuestionViewController.h"
 
-@interface TopicViewController ()<scrollDisplayViewControllerDelegate>
+@interface TopicViewController ()<scrollDisplayViewControllerDelegate,topicsViewControllerShowDetagate,questionViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segment;
 
@@ -30,6 +32,7 @@
 -(QuestionViewController *)questionVC{
     if (!_questionVC) {
         _questionVC = [[QuestionViewController alloc] init];
+        _questionVC.delegate = self;
     }
     return _questionVC;
 }
@@ -37,6 +40,7 @@
 -(TopicsViewController *)topicsVC{
     if (!_topicsVC) {
         _topicsVC = [[TopicsViewController alloc] init];
+        _topicsVC.delegate = self;
     }
     return _topicsVC;
 }
@@ -71,7 +75,6 @@
     ResultViewController *resultVC = [kStoryboard(@"Main") instantiateViewControllerWithIdentifier:@"ResultViewController"];
     resultVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:resultVC animated:YES];
-    NSLog(@"点击了搜索按钮");
 }
 
 - (void)viewDidLoad {
@@ -90,8 +93,21 @@
 -(void)scrollDisplayViewController:(ScrollDisplayViewController *)scrollDisplayViewController currentIdenx:(NSInteger)index{
     self.segment.selectedSegmentIndex = index;
     self.segment.selected = YES;
-    NSLog(@"index:%ld",index);
 }
+
+#pragma mark - topicsViewControllerShowDetagate
+-(void)topicsViewController:(TopicsViewController *)topicsViewController sendExpertID:(NSString *)ID{
+    DetailTopicsViewController *vc = [[DetailTopicsViewController alloc] init];
+    vc.subjectID = ID;
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
+#pragma mark - questionViewControllerDelegate
+-(void)questionViewController:(QuestionViewController *)questionViewController didSendExpertID:(NSString *)ID{
+        DetailQuestionViewController *vc = [[DetailQuestionViewController alloc] initWithID:ID];
+        [self presentViewController:vc animated:YES completion:nil];
+}
+
 
 @end
 

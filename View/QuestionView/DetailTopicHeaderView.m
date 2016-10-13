@@ -15,4 +15,9 @@
     _concernView.layer.cornerRadius = 15;
     _concernView.layer.masksToBounds = YES;
 }
+
+-(void)setBgImageView:(UIImageView *)bgImageView{
+    _bgImageView = bgImageView;
+    _bgImageView.contentMode = UIViewContentModeScaleAspectFill;
+}
 @end

@@ -69,7 +69,6 @@
 }
 
 -(void)configBannerView{
-    NSLog(@"调用");
     NSString *videoURL = [self.vVM getURL];
     UIView *bannerView = [[UIView alloc] init];
         if (videoURL == nil) {

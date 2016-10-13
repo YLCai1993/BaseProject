@@ -27,8 +27,8 @@
     return self;
 }
 
--(void)getDataFromNetCompleteHandle:(CompletionHandle)completionHandle{
-    self.dataTask = [TuWanNetManager getTuWanInfoWithType:_type start:_start completionHandle:^(TuWanModel *model, NSError *error) {
+- (void)getDataFromNetCompleteHandle:(CompletionHandle)completionHandle{
+    [TuWanNetManager getTuWanInfoWithType:_type start:_start completionHandle:^(TuWanModel *model, NSError *error) {
         if (_start == 0) {
             [self.dataArr1 removeAllObjects];
             self.indexPicArr = nil;
@@ -39,12 +39,12 @@
     }];
 }
 
--(void)refreshDataCompletionHandle:(CompletionHandle)completionHandle{
+- (void)refreshDataCompletionHandle:(CompletionHandle)completionHandle{
     _start = 0;
     [self getDataFromNetCompleteHandle:completionHandle];
 }
 
--(void)getMoreDataCompletionHandle:(CompletionHandle)completionHandle{
+- (void)getMoreDataCompletionHandle:(CompletionHandle)completionHandle{
     _start+=10;
     [self getDataFromNetCompleteHandle:completionHandle];
 }
@@ -149,5 +149,12 @@
     return [[self modelForArr:self.indexPicArr row:row].type isEqualToString:@"all"];
 }
 
+/** 返回某行数据的Aid  */
+-(NSString *)aidInListForRow:(NSInteger )row{
+    return [self modelForArr:self.dataArr1 row:row].aid;
+}
+-(NSString *)aidInIndexPicForRow:(NSInteger )row{
+    return [self modelForArr:self.indexPicArr row:row].aid;
+}
 
 @end

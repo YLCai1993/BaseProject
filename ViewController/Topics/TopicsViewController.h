@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+@class TopicsViewController;
+
+@protocol topicsViewControllerShowDetagate <NSObject>
+
+-(void)topicsViewController:(TopicsViewController *)topicsViewController sendExpertID:(NSString *)ID;
+
+@end
 
 @interface TopicsViewController : UIViewController
+
+@property(nonatomic,weak)id<topicsViewControllerShowDetagate> delegate;
 
 @end

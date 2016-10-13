@@ -21,6 +21,8 @@
 -(NSString *)getContentForSection:(NSInteger )section;
 -(CGFloat )cellHeightForRow:(NSInteger )section;
 
+-(NSString *)getexperIDForRow:(NSInteger )row;
+
 -(void)getTopicsDataCompleteHandle:(void(^)(NSError *error))complete;
 
 -(void)getMoreTopcisDataCompleteHandle:(void(^)(NSError *error))complete;

@@ -7,6 +7,10 @@
 //
 
 #import "LeftViewController.h"
+#import "TuWanViewController.h"
+#import "UIViewController+YQSlideMenu.h"
+#import "RankListViewController.h"
+#import "AlbumViewController.h"
 
 @interface LeftViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -25,6 +29,7 @@
         _tableView.dataSource = self;
         _tableView.backgroundColor = [UIColor clearColor];
         _tableView.backgroundView.backgroundColor = [UIColor clearColor];
+        _tableView.bounces = NO;
     }
     return _tableView;
 }
@@ -33,8 +38,8 @@
     [super viewDidLoad];
     /** 配置背景图片 */
     [self configBackgroundImage];
-    self.tableListArr = @[@"游戏资讯",@"喜马拉雅",@"英雄联盟",@"个人设置"];
-#warning 写到这里
+    self.tableListArr = @[@"游戏资讯",@"喜马拉雅",@"英雄联盟",@"美女瀑布"];
+
     [self.bgImageView addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(150, 200));
@@ -72,7 +77,21 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    if (indexPath.row == 0) {
+        TuWanViewController *vc = [TuWanViewController standardRuWanNavi];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.slideMenuController showViewController:vc];
+        vc.title = @"兔玩";
+    }else if (indexPath.row == 1){
+        RankListViewController *vc = [RankListViewController defaultNavi];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.slideMenuController showViewController:vc];
+        
+    }else if (indexPath.row ==3){
+        AlbumViewController *vc = [AlbumViewController defaultAlbumViewController];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.slideMenuController showViewController:vc];
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

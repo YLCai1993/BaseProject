@@ -2,7 +2,7 @@
 //  PrefixHeader.pch
 //  BaseProject
 //
-//  Created by jiyingxin on 15/10/21.
+//  Created by YLCai on 15/10/21.
 //  Copyright © 2015年 Tarena. All rights reserved.
 //
 
@@ -27,6 +27,9 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "UIView+Extension.h"
+
+/*  全局的工厂方法 */
+#import "Factory.h"
 
 //用于存放全局宏定义 或者 静态字符串
 #import "Constants.h"

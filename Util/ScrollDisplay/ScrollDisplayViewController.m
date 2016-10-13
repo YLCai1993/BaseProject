@@ -119,7 +119,7 @@
     _detailMessage = detailMessage;
     [self.view insertSubview:self.view1 belowSubview:_pageControl];
     [self.view1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(self.view.width, 30));
+        make.size.mas_equalTo(CGSizeMake(kWindowW, 30));
         make.bottom.right.mas_equalTo(0);
     }];
     [self.view1 addSubview:self.detailLabel];
@@ -149,6 +149,9 @@
     _autoCycle = autoCycle;
     [_timer invalidate];
     if (autoCycle == NO) {
+        return;
+    }
+    if (_controllers == nil || _controllers.count == 0) {
         return;
     }
     _timer = [NSTimer bk_scheduledTimerWithTimeInterval:_duration block:^(NSTimer *timer) {
@@ -192,7 +195,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.detailLabel.text = _detailMessage[0];
+    /*  容错处理 */
+    if (_detailMessage == nil || _detailMessage.count == 0) {
+        self.detailLabel.text = @"没有数据";
+    }else{
+       self.detailLabel.text = _detailMessage[0];    
+    }
+    
     if (!_controllers || _controllers.count == 0) {
         return;
     }

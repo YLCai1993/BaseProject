@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  BaseProject
 //
-//  Created by jiyingxin on 15/10/21.
+//  Created by YLCai on 15/10/21.
 //  Copyright © 2015年 Tarena. All rights reserved.
 //
 
@@ -14,10 +14,11 @@
 #import "LeftViewController.h"
 #import "YLTabBarController.h"
 
-
+#import "TopicsNetManager.h"
 
 #define AppKey @"57fb66abe0f55a10340033c1"
 
+#import "BaseNetManager.h"
 
 @interface AppDelegate ()
 
@@ -35,6 +36,18 @@
 //}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+//    [TopicsNetManager getDetailTopicsBeginAtIndex:@(1) andID:@"EX03080348415194163515" completeHandle:^(DetailQuestionModel *model, NSError *error) {
+//        
+//        NSLog(@"****");
+//        NSLog(@"你好");
+//    }];
+    
+//    [BaseNetManager Get:@"http://mobile.ximalaya.com/mobile/others/ca/album/track/3092772/true/1/20?device=iPhone" parameters:nil completionHandler:^(id responseObj, NSError *error) {
+//       
+//        NSLog(@"***");
+//    }];
+    
     /*  友盟统计注册  */
     [MobClick startWithAppkey:AppKey reportPolicy:BATCH channelId:nil];
     
@@ -50,6 +63,11 @@
     [self.window makeKeyAndVisible];
     
     return YES;
+    
+    
+
+    
+    
 }
 
 

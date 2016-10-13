@@ -11,6 +11,7 @@
 #import "QuestionViewModel.h"
 #import <UIButton+WebCache.h>
 #import <UIImageView+WebCache.h>
+#import "DetailQuestionViewController.h"
 #import "QuestionCell.h"
 #define buttonW 41
 #define buttonH 41
@@ -120,7 +121,8 @@
         CGFloat buttonY = 12 + interY*(NSInteger)(i/col) + buttonH*(NSInteger)(i/col);
         button.frame = CGRectMake(buttonX, buttonY, buttonW, buttonH);
         [button bk_addEventHandler:^(UIButton *sender) {
-            NSLog(@"点击了上方的按钮");
+#warning 这里需要修改
+            NSLog(@"点击了上8888方的按钮");
         } forControlEvents:UIControlEventTouchUpInside];
         [headerView addSubview:button];
         
@@ -186,6 +188,22 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    NSLog(@"******:%@",[self.qVM getexperIDForRow:indexPath.section]);
+    
+    [self.delegate questionViewController:self didSendExpertID:[self.qVM getexperIDForRow:indexPath.section]];
+    
 }
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+

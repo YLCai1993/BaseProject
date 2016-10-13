@@ -173,10 +173,21 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    DetailTopicsViewController *vc = [[DetailTopicsViewController alloc] init];
-    vc.subjectID = [self.tVM getSubjectIDForSection:indexPath.section];
-    vc.hidesBottomBarWhenPushed = YES;
-    [self presentViewController:vc animated:YES completion:nil];
+//    DetailTopicsViewController *vc = [[DetailTopicsViewController alloc] init];
+//    vc.subjectID = [self.tVM getSubjectIDForSection:indexPath.section];
+    
+    [self.delegate topicsViewController:self sendExpertID:[self.tVM getSubjectIDForSection:indexPath.section]];
+    
+    
+//    [self.view addSubview:vc.view];
+//    [vc.view mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.mas_equalTo(64);
+//        make.left.right.bottom.mas_equalTo(0);
+//    }];
+//
+//    [UIView animateWithDuration:0.5 animations:^{
+//        [vc.view layoutIfNeeded];
+//    }];
     
 }
 

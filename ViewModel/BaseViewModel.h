@@ -2,7 +2,7 @@
 //  BaseViewModel.h
 //  BaseProject
 //
-//  Created by jiyingxin on 15/10/21.
+//  Created by YLCai on 15/10/21.
 //  Copyright © 2015年 Tarena. All rights reserved.
 //
 
@@ -22,7 +22,7 @@ typedef void(^CompletionHandle)(NSError *error);
 
 @end
 
-@interface BaseViewModel : NSObject
+@interface BaseViewModel : NSObject<BaseViewModelDelegate>
 
 @property(nonatomic,strong) NSMutableArray *dataArr1;
 @property(nonatomic,strong) NSURLSessionDataTask *dataTask;

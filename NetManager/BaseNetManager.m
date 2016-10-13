@@ -2,7 +2,7 @@
 //  BaseNetManager.m
 //  BaseProject
 //
-//  Created by jiyingxin on 15/10/21.
+//  Created by YLCai on 15/10/21.
 //  Copyright © 2015年 Tarena. All rights reserved.
 //
 
@@ -16,8 +16,10 @@ static AFHTTPRequestOperationManager *manager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         manager = [AFHTTPRequestOperationManager manager];
-        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"application/json", nil];
-        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"application/json", nil];
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", @"application/json", @"text/json", @"text/javascript", @"text/plain", nil];
+//        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"application/json", nil];
+        
+        
     });
     
     return manager;
@@ -33,7 +35,7 @@ static AFHTTPRequestOperationManager *manager = nil;
          
 + (id)GET:(NSString *)path parameters:(NSDictionary *)params completionHandler:(void(^)(id responseObj, NSError *error))complete{
     //打印网络请求， DDLog  与  NSLog 功能一样
-    DDLogVerbose(@"Request Path: %@, params %@", path, params);
+    DDLogVerbose(@"Request Path: %@, params %@", path, params);;
     return [[self sharedAFManager] GET:path parameters:params success:^void(AFHTTPRequestOperation * operation, id responseObject) {
         complete(responseObject, nil);
     } failure:^void(AFHTTPRequestOperation * operation, NSError * error) {
