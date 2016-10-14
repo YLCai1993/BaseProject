@@ -113,7 +113,7 @@
     for (NSInteger i = 0; i<images.count; i++) {
         
         UIButton *button = [[UIButton alloc] init];
-        [button sd_setBackgroundImageWithURL:[NSURL URLWithString:images[i]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"contentview_imagebg_logo"]];
+        [button sd_setBackgroundImageWithURL:[NSURL URLWithString:images[i]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"bitmap_300*200"]];
         button.tag = i;
         CGFloat imageX = inter + (imageViewW + inter) * i;
         button.frame = CGRectMake(imageX, inter, imageViewW, ImageViewH);
@@ -160,8 +160,8 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     TopicsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TopicsCell"];
     cell.titleLabel.text = [self.tVM getTitleNameForSection:indexPath.section];
-    [cell.head1ImageView sd_setImageWithURL:[NSURL URLWithString:[self.tVM getHead1ImageForSection:indexPath.section]] placeholderImage:[UIImage imageNamed:@"contentview_imagebg_logo"]];
-    [cell.head2ImageView sd_setImageWithURL:[NSURL URLWithString:[self.tVM getHeadImage2ForSection:indexPath.section]] placeholderImage:[UIImage imageNamed:@"contentview_imagebg_logo"]];
+    [cell.head1ImageView sd_setImageWithURL:[NSURL URLWithString:[self.tVM getHead1ImageForSection:indexPath.section]] placeholderImage:[UIImage imageNamed:@"bitmap_300*200"]];
+    [cell.head2ImageView sd_setImageWithURL:[NSURL URLWithString:[self.tVM getHeadImage2ForSection:indexPath.section]] placeholderImage:[UIImage imageNamed:@"bitmap_300*200"]];
     cell.comment1Label.text = [self.tVM getContent1ForSection:indexPath.section];
     cell.content2Label.text = [self.tVM getContent2ForSection:indexPath.section];
     cell.classLabel.text = [self.tVM getClassForSection:indexPath.section];

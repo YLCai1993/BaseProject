@@ -26,9 +26,19 @@
 @property(nonatomic,strong)ClassViewController *classVC;
 @property(nonatomic,assign)BOOL isShowFutureLbael;
 
+/*  上方选择栏 */
+@property (weak, nonatomic) IBOutlet UISegmentedControl *classSegment;
+
+
 @end
 
 @implementation LineRadioViewController
+
+-(void)setClassSegment:(UISegmentedControl *)classSegment{
+    _classSegment = classSegment;
+    _classSegment.layer.cornerRadius = 15;
+    _classSegment.layer.masksToBounds = YES;
+}
 
 -(ClassViewController *)classVC{
     if (!_classVC) {
@@ -86,6 +96,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.classSegment.hidden = NO;
     self.tableView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
     [self getData];
     self.segment.selectedSegmentIndex = 0;

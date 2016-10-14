@@ -54,7 +54,6 @@
     NSMutableArray *details = [NSMutableArray new];
     if ([_tag isEqualToString:@"doc"]) {
         NSString *string = self.model.body;
-//        NSLog(@"string::::%@",string);
         NSMutableArray *arr = [NSMutableArray new];
         while (string.length>0) {
             NSMutableString *muStr = [string mutableCopy];

@@ -29,6 +29,12 @@
 @implementation TopicViewController
 
 #pragma mark - lazy load
+-(void)setSegment:(UISegmentedControl *)segment{
+    _segment = segment;
+    _segment.layer.cornerRadius = 15;
+    _segment.layer.masksToBounds = YES;
+}
+
 -(QuestionViewController *)questionVC{
     if (!_questionVC) {
         _questionVC = [[QuestionViewController alloc] init];
@@ -79,6 +85,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.segment.hidden = NO;
     self.navigationItem.title = @"话题";
     self.segment.layer.cornerRadius = 15;
     

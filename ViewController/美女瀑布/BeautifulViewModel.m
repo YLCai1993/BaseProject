@@ -27,6 +27,15 @@
     
 }
 
+/*  获取所有的图片链接  */
+-(NSArray *)getAllPictures{
+    NSMutableArray *arr = [NSMutableArray new];
+    for (AlbumDataModel *dataModel in self.dataArr) {
+        [arr addObject:dataModel.coverUrl];
+    }
+    return [arr copy];
+}
+
 -(void)refreshDataCompletehandle:(void (^)(NSError *))complete{
     self.page = 1;
     [self getDataCompleteHandle:complete];

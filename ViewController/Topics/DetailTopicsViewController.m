@@ -79,7 +79,7 @@
     
     DetailTopicHeaderView *headerView = [[NSBundle mainBundle] loadNibNamed:@"DetailTopicHeaderView" owner:nil options:nil].firstObject;
     self.headerView = headerView;
-    [headerView.bgImageView sd_setImageWithURL:[NSURL URLWithString:[self.DTVM getTableViewBgImageURL]] placeholderImage:[UIImage imageNamed:@"contentview_imagebg_logo"]];
+    [headerView.bgImageView sd_setImageWithURL:[NSURL URLWithString:[self.DTVM getTableViewBgImageURL]] placeholderImage:[UIImage imageNamed:@"bitmap_300*200"]];
     headerView.titleLabel.text = [self.DTVM getHeadTitleName];
     headerView.cntentLabel.text = [self.DTVM getHeadContent];
     headerView.cntentLabel.font = [UIFont boldSystemFontOfSize:16];

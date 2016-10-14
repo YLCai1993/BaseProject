@@ -128,7 +128,7 @@
                                 <segment title="热门"/>
                                 <segment title="分类"/>
                             </segments>
-                            <color key="tintColor" red="0.9309808611869812" green="0.28297129273414612" blue="0.18571358919143677" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="didSelected:" destination="UPl-K4-eOV" eventType="valueChanged" id="mFn-cz-4X3"/>
                             </connections>
@@ -136,6 +136,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="classSegment" destination="Y36-e3-g4y" id="UgA-cy-e8T"/>
                         <outlet property="segment" destination="Y36-e3-g4y" id="mBU-C8-Pjz"/>
                         <outlet property="tableView" destination="0mB-VP-Mp0" id="oSU-iD-hIw"/>
                     </connections>
@@ -495,7 +496,7 @@
                                 <segment title="话题"/>
                                 <segment title="关注"/>
                             </segments>
-                            <color key="tintColor" red="0.9309808611869812" green="0.28297129273414612" blue="0.18571358919143677" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="changeView:" destination="WWv-5R-poH" eventType="valueChanged" id="oV6-Mt-B6d"/>
                             </connections>
@@ -609,11 +610,11 @@
             </objects>
             <point key="canvasLocation" x="119" y="103"/>
         </scene>
-        <!--新闻-->
+        <!--推荐-->
         <scene sceneID="oEI-2Y-UBY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jAn-WR-USS" customClass="YLNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="新闻" image="old_tabbar_icon_news_normal" id="0Tq-Us-MuK">
+                    <tabBarItem key="tabBarItem" title="推荐" image="old_tabbar_icon_news_normal" id="0Tq-Us-MuK">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="old_tabbar_icon_news_highlight"/>
                         </userDefinedRuntimeAttributes>
@@ -677,7 +678,7 @@
                                                     <rect key="frame" x="50" y="0.0" width="290" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="user_set_icon_message" id="Abc-mm-u3X">
@@ -698,7 +699,7 @@
                                                     <rect key="frame" x="50" y="0.0" width="290" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="user_set_icon_fresh" id="Wpd-H9-OWX">
@@ -723,7 +724,7 @@
                                                     <rect key="frame" x="50" y="0.0" width="290" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="user_set_icon_message" id="Im5-Fs-cQt">
@@ -744,7 +745,7 @@
                                                     <rect key="frame" x="50" y="0.0" width="290" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="user_set_icon_fresh" id="NhQ-JH-jfh">
@@ -765,7 +766,7 @@
                                                     <rect key="frame" x="50" y="12" width="64" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="user_set_icon_fresh" id="MgE-rU-kRI">
@@ -797,7 +798,7 @@
                                                     <rect key="frame" x="50" y="0.0" width="310" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="user_set_icon_message" id="uDp-s9-0Et">
@@ -821,7 +822,7 @@
                                                     <rect key="frame" x="50" y="0.0" width="290" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="user_set_icon_fresh" id="sfM-Mx-lBg">
@@ -842,7 +843,7 @@
                                                     <rect key="frame" x="50" y="12" width="64" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="user_set_icon_fresh" id="US2-4F-HtX">
@@ -870,7 +871,7 @@
                                                     <rect key="frame" x="50" y="0.0" width="290" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="user_set_icon_fresh" id="Zca-Vy-Mjj">
@@ -919,11 +920,11 @@
             </objects>
             <point key="canvasLocation" x="3510.5" y="1010.5"/>
         </scene>
-        <!--话题-->
+        <!--生活-->
         <scene sceneID="Thz-It-XlA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tn9-te-QPn" customClass="YLNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="话题" image="tabbar_icon_bar_normal" id="oLy-kf-WwK">
+                    <tabBarItem key="tabBarItem" title="生活" image="tabbar_icon_bar_normal" id="oLy-kf-WwK">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="tabbar_icon_bar_highlight"/>
                         </userDefinedRuntimeAttributes>
@@ -942,11 +943,11 @@
             </objects>
             <point key="canvasLocation" x="1400" y="229"/>
         </scene>
-        <!--我-->
+        <!--Me-->
         <scene sceneID="EmE-lo-lcN">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YTg-JO-nWY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我" image="tabbar_icon_me_normal" id="qpX-Dx-UhK">
+                    <tabBarItem key="tabBarItem" title="Me" image="tabbar_icon_me_normal" id="qpX-Dx-UhK">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="tabbar_icon_me_highlight"/>
                         </userDefinedRuntimeAttributes>

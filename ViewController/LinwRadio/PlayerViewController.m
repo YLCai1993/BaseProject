@@ -147,7 +147,7 @@
     }else{
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kWindowW, 120)];
         imageView.backgroundColor = [UIColor redColor];
-        [imageView sd_setImageWithURL:[NSURL URLWithString:self.imageURL] placeholderImage:[UIImage imageNamed:@"contentview_imagebg_logo"]];
+        [imageView sd_setImageWithURL:[NSURL URLWithString:self.imageURL] placeholderImage:[UIImage imageNamed:@"bitmap_300*200"]];
         [self.view addSubview:imageView];
         imageView.userInteractionEnabled = YES;
         [imageView addSubview:button];

@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"直播预告";
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"tabbar_icon_refresh"] style:UIBarButtonItemStylePlain target:self action:nil];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"tabbar_icon_refresh"] style:UIBarButtonItemStylePlain target:self action:@selector(refresh)];
     [self.tableView registerNib:[UINib nibWithNibName:@"FutureCell" bundle:nil] forCellReuseIdentifier:@"FutureCell"];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -37,6 +37,12 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
+}
+/*  刷新操作 */
+-(void)refresh{
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self.tableView.header endRefreshing];
+    }];
 }
 
 #pragma amrk - UITabeViewDelegate
@@ -50,6 +56,10 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return @"最近直播";
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{

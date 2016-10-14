@@ -17,6 +17,9 @@
 //
 -(NSURL *)iconForRow:(NSInteger )row;
 
+/*  获取所有的图片链接  */
+-(NSArray *)getAllPictures;
+
 -(void)refreshDataCompletehandle:(void(^)(NSError *error))complete;
 
 -(void)getMoreBeautifulDataCompletehandle:(void(^)(NSError *error))complete;

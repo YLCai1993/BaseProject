@@ -74,7 +74,7 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor greenColor];
-    self.title = @"兔玩";
+    self.title = @"游戏资讯";
 //    [Factory addMenuItemToVC:self];
     
 }

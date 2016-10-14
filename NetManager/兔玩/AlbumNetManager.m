@@ -9,7 +9,7 @@
 #import "AlbumNetManager.h"
 
 
-//?action=l&albumsTag=beautifulWoman&p=1&v=77&OSType=iOS8.2&versionName=2.1.7
+//http://box.dwstatic.com/apiAlbum.php?action=l&albumsTag=beautifulWoman&p=1&v=77&OSType=iOS8.2&versionName=2.1.7
 @implementation AlbumNetManager
 
 +(id)getBeautifulWomanWithPage:(NSInteger)page cpmpletionHandle:(void (^)(AlbumModels *, NSError *))complete{
@@ -18,7 +18,7 @@
     NSDictionary *params = @{
                              @"action":@"l",
                              @"albumsTag":@"beautifulWoman",
-                             @"p":@"1",
+                             @"p":@(page),
                              @"v":@"77",
                              @"OSType":@"iOS8.2",
                              @"versionName":@"2.1.7"

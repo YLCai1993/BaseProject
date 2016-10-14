@@ -113,7 +113,7 @@
     CGFloat lasteY = 0;
     for (NSInteger i = 0; i<picNames.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button sd_setBackgroundImageWithURL:[NSURL URLWithString:picNames[i]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"contentview_imagebg_logo"]];
+        [button sd_setBackgroundImageWithURL:[NSURL URLWithString:picNames[i]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"bitmap_300*200"]];
         button.tag = i;
         button.layer.cornerRadius = 5;
         button.layer.masksToBounds = YES;
@@ -178,7 +178,7 @@
     [cell.headerImageView sd_setImageWithURL:[NSURL URLWithString:[self.qVM getHeadImageForSection:indexPath.section]] placeholderImage:[UIImage imageNamed:@"error"]];
     cell.name.text = [self.qVM getNameForSection:indexPath.section];
     cell.niName.text = [self.qVM getNiNameForSection:indexPath.section];
-    [cell.contentImage sd_setImageWithURL:[NSURL URLWithString:[self.qVM getContentImageForSection:indexPath.section]] placeholderImage:[UIImage imageNamed:@"contentview_imagebg_logo-1"]];
+    [cell.contentImage sd_setImageWithURL:[NSURL URLWithString:[self.qVM getContentImageForSection:indexPath.section]] placeholderImage:[UIImage imageNamed:@"bitmap_300*200"]];
     cell.classLabel.text = [self.qVM getClassNameForSection:indexPath.section];
     cell.concernLabel.text = [self.qVM getConcernFoSection:indexPath.section];
     cell.contentlabel.text = [self.qVM getContentForSection:indexPath.section];

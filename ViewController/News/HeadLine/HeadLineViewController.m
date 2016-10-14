@@ -15,6 +15,7 @@
 #import "NormalCell.h"
 #import "OnePictureCell.h"
 #import "ThreePictureCell.h"
+#import "YLImageView.h"
 #import "Global.h"
 
 //将headLine添加到NewsViewController中

@@ -45,7 +45,7 @@
         _sdVC.delegate = self;
         _sdVC.showPageControl = NO;
         [self addChildViewController:_sdVC];
-        _sdVC.view.backgroundColor = [UIColor redColor];
+        _sdVC.view.backgroundColor = [UIColor whiteColor];
         _sdVC.view.frame = CGRectMake(0, 160, self.view.width, 250);
         
         self.AdsView.titleLabel.text = [self.adsVM getTitle];
@@ -89,7 +89,6 @@
     button.backgroundColor = [UIColor redColor];
     button.layer.cornerRadius = 10;
     button.layer.masksToBounds = YES;
-    button.backgroundColor = [UIColor redColor];
     button.titleLabel.font = [UIFont systemFontOfSize:14];
     [button setTitle:[NSString stringWithFormat:@"%d跟帖",arc4random_uniform(10000)] forState:UIControlStateNormal];
     [self.view addSubview:button];

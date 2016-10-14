@@ -9,10 +9,12 @@
 #import "AlbumViewController.h"
 #import "PSCollectionView.h"
 #import "BeautifulViewModel.h"
+#import "ThreeDAlbumViewController.h"
 
-@interface AlbumViewController ()<UIScrollViewDelegate,PSCollectionViewDelegate, PSCollectionViewDataSource>
+@interface AlbumViewController ()<UIScrollViewDelegate,PSCollectionViewDelegate, PSCollectionViewDataSource,threeDAlbumViewControllerDelegate>
 
 @property(nonatomic,strong)PSCollectionView *collectionView;
+@property(nonatomic,strong)ThreeDAlbumViewController *vc;
 @property(nonatomic,strong)BeautifulViewModel *vm;
 
 @end
@@ -71,6 +73,15 @@
             }
             [self.collectionView.header endRefreshing];
         }];
+        /* 为了获取二十个数据 */
+        [self.vm getMoreBeautifulDataCompletehandle:^(NSError *error) {
+            [self.collectionView reloadData];
+            if (error) {
+                [self showErrorMsg:error.description];
+            }
+            [self.collectionView.footer endRefreshing];
+        }];
+
     }];
     [self.collectionView.header beginRefreshing];
 
@@ -111,6 +122,26 @@
     iv.frame = CGRectMake(0, 0, kWindowW/2 - 12, [self collectionView:collectionView heightForRowAtIndex:index]);
     [iv setImageWithURL:[self.vm iconForRow:index]];
     return cell;
+}
+
+-(void)collectionView:(PSCollectionView *)collectionView didSelectCell:(PSCollectionViewCell *)cell atIndex:(NSInteger)index{
+    ThreeDAlbumViewController *vc = [[ThreeDAlbumViewController alloc] init];
+    self.vc = vc;
+    NSArray *pictures = [self.vm getAllPictures];
+    vc.pictures = pictures;
+    vc.delegate = self;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+#pragma mark - threeDAlbumViewControllerDelegate
+-(void)threeDAlbumViewController:(ThreeDAlbumViewController *)threeDAlbumViewController{
+    [self.vm getMoreBeautifulDataCompletehandle:^(NSError *error) {
+        self.vc.pictures = [self.vm getAllPictures];
+//        NSLog(@"数量:%ld",self.vc.pictures.count);
+        if (error) {
+            [self showErrorMsg:error.description];
+        }
+    }];
 }
 
 @end

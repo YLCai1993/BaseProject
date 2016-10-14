@@ -123,15 +123,16 @@
 -(void)getDataCompleteHandle:(void(^)(NSError *))complete{
     //获取头条数据
     if (!_className) {
+    
+        
         [NewsNetManager getNewsListForm:_type fn:_fn offset:_offset size:_sizeNumber completeHandle:^(NewsModel *model, NSError *error) {
             if (_fn == 1) {
                 [self.dataArr removeAllObjects];
             }
             [self.dataArr addObjectsFromArray:model.tid];
-//             NSLog(@"数据:%ld",self.dataArr.count);
+            if (model.tid.count == 0 || model.tid == nil) return;
             TidNewsModel *tid = model.tid[0];
             self.headImageURL =tid.ads;
-//            NSLog(@"count:%ld",self.headImageURL.count);
             if (self.dataArr.count != 0) {
               [self.dataArr removeObjectAtIndex:0];
             }

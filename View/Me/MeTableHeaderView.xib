@@ -40,6 +40,7 @@
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UqF-TT-k9Y">
                     <rect key="frame" x="20" y="191" width="73" height="17"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <state key="normal" title="微信登录" image="night_user_login_weixin_normal">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -155,7 +156,7 @@
                     </variation>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.66666666666666663" green="0.13725490196078433" blue="0.12156862745098039" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.16078431372549018" green="0.1764705882352941" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="qPa-Vw-oOC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="85" id="091-cI-v9j"/>
                 <constraint firstItem="m4k-OR-X7l" firstAttribute="top" secondItem="ojA-Bi-gPq" secondAttribute="bottom" constant="44" id="0Nc-XR-fDB"/>

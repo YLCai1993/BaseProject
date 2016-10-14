@@ -53,7 +53,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"音乐TOP50";
+    self.title = @"音乐榜";
     
 //    [Factory addMenuItemToVC:self];
     

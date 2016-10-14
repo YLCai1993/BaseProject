@@ -75,9 +75,7 @@
 
 -(instancetype)initWithCoder:(NSCoder *)aDecoder{
     if (self = [super initWithCoder:aDecoder]) {
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navbar_netease.png"]];
-        self.navigationItem.titleView = imageView;
-        
+        self.navigationItem.title = @"财新网";
     }
     return self;
 }
